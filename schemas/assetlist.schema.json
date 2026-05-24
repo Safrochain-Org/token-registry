@@ -68,10 +68,19 @@
         "coingecko_id": { "type": "string" },
         "logo_URIs": {
           "type": "object",
-          "anyOf": [{ "required": ["png"] }, { "required": ["svg"] }],
+          "anyOf": [
+            { "required": ["png"] },
+            { "required": ["svg"] },
+            { "required": ["jpg"] },
+            { "required": ["jpeg"] },
+            { "required": ["webp"] }
+          ],
           "properties": {
             "png": { "type": "string", "format": "uri-reference" },
-            "svg": { "type": "string", "format": "uri-reference" }
+            "svg": { "type": "string", "format": "uri-reference" },
+            "jpg": { "type": "string", "format": "uri-reference" },
+            "jpeg": { "type": "string", "format": "uri-reference" },
+            "webp": { "type": "string", "format": "uri-reference" }
           },
           "additionalProperties": false
         },
@@ -82,6 +91,9 @@
             "properties": {
               "png": { "type": "string", "format": "uri-reference" },
               "svg": { "type": "string", "format": "uri-reference" },
+              "jpg": { "type": "string", "format": "uri-reference" },
+              "jpeg": { "type": "string", "format": "uri-reference" },
+              "webp": { "type": "string", "format": "uri-reference" },
               "image_sync": {
                 "type": "object",
                 "properties": {

@@ -89,13 +89,13 @@
     "ics721"
   ],
   "logo_URIs": {
-    "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
-    "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg"
+    "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.png",
+    "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.svg"
   },
   "images": [
     {
-      "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
-      "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg",
+      "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.png",
+      "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.svg",
       "theme": {
         "primary_color_hex": "#0E7C3A",
         "circle": true

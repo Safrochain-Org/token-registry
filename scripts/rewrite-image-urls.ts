@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 import fg from "fast-glob";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const REPO = process.env.REGISTRY_REPO || "safrochain/token-registry";
+const REPO = process.env.REGISTRY_REPO || "Safrochain-Org/token-registry";
 const BRANCH = process.env.REGISTRY_BRANCH || "main";
 const RAW_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
 

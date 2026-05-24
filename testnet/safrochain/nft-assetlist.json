@@ -33,12 +33,12 @@
         "payment_address": "addr_safro1examplefoundation00000000000000000000000"
       },
       "logo_URIs": {
-        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/nft/safro-genesis/logo.png"
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/nft/safro-genesis/logo.png"
       },
-      "banner_URI": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/nft/safro-genesis/banner.png",
+      "banner_URI": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/nft/safro-genesis/banner.png",
       "preview_images": [
-        "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/nft/safro-genesis/preview-1.png",
-        "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/nft/safro-genesis/preview-2.png"
+        "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/nft/safro-genesis/preview-1.png",
+        "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/nft/safro-genesis/preview-2.png"
       ],
       "metadata": {
         "base_uri": "ipfs://bafy.../",

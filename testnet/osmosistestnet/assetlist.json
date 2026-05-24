@@ -21,8 +21,8 @@
       "symbol": "OSMO",
       "coingecko_id": "osmosis",
       "logo_URIs": {
-        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/osmosistestnet/images/osmo.png",
-        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/osmosistestnet/images/osmo.svg"
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/osmosistestnet/images/osmo.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/osmosistestnet/images/osmo.svg"
       },
       "safrimba": {
         "listed": true,

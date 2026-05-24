@@ -14,11 +14,11 @@
       "display": "rep",
       "symbol": "REP",
       "coingecko_id": "replace-me",
-      "logo_URIs": { "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png", "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg" },
+      "logo_URIs": { "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png", "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg" },
       "images": [
         {
-          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png",
-          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg",
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg",
           "theme": { "primary_color_hex": "#000000", "circle": true }
         }
       ],

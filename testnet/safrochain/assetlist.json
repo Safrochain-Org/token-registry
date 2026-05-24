@@ -28,13 +28,13 @@
       "symbol": "SAF",
       "coingecko_id": "safrochain",
       "logo_URIs": {
-        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
-        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg"
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.svg"
       },
       "images": [
         {
-          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
-          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg",
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/saf.svg",
           "theme": {
             "primary_color_hex": "#0E7C3A",
             "circle": true
@@ -73,8 +73,8 @@
       "display": "usdc",
       "symbol": "USDC",
       "logo_URIs": {
-        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/usdc.png",
-        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/usdc.svg"
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/usdc.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/usdc.svg"
       },
       "traces": [
         {
@@ -134,13 +134,11 @@
       "symbol": "AEX",
       "address": "addr_safro1hezduhmk52kacax8f9l076sdgtejf8eshtszla",
       "logo_URIs": {
-        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.png",
-        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.svg"
+        "jpg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/aex.jpg"
       },
       "images": [
         {
-          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.png",
-          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.svg",
+          "jpg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/testnet/safrochain/images/aex.jpg",
           "theme": {
             "primary_color_hex": "#1F6FEB",
             "circle": true

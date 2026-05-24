@@ -86,7 +86,7 @@ use the **full GitHub raw URL** so third‑party consumers (Keplr, Mintscan,
 Safrimba, …) can fetch logos without cloning the repo:
 
 ```
-https://raw.githubusercontent.com/safrochain/token-registry/main/<network>/<chain_name>/images/<file>
+https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/<network>/<chain_name>/images/<file>
 ```
 
 If you've added or moved images and want the URLs regenerated mechanically,
