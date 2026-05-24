@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.safrochain.com/schemas/assetlist.schema.json",
+  "title": "AssetList",
+  "description": "Fungible token list for a single chain. Native, factory, cw20, and IBC-bridged assets.",
+  "type": "object",
+  "required": ["chain_name", "assets"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "chain_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$"
+    },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/asset" }
+    }
+  },
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "required": [
+        "type_asset",
+        "base",
+        "name",
+        "display",
+        "symbol",
+        "denom_units",
+        "logo_URIs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type_asset": {
+          "type": "string",
+          "enum": [
+            "sdk.coin",
+            "ics20",
+            "cw20",
+            "snip20",
+            "snip25",
+            "erc20",
+            "factory",
+            "native"
+          ]
+        },
+        "description": { "type": "string", "maxLength": 1000 },
+        "extended_description": { "type": "string", "maxLength": 4000 },
+        "denom_units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["denom", "exponent"],
+            "properties": {
+              "denom": { "type": "string", "minLength": 1 },
+              "exponent": { "type": "integer", "minimum": 0, "maximum": 24 },
+              "aliases": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          }
+        },
+        "base": { "type": "string", "minLength": 1, "description": "Unique on-chain denom (e.g. usaf, ibc/27394FB..., factory/...)." },
+        "name": { "type": "string", "minLength": 1 },
+        "display": { "type": "string", "minLength": 1, "description": "Human-facing denom symbol (must match a denom_units entry)." },
+        "symbol": { "type": "string", "pattern": "^[A-Z0-9.\\-]{1,16}$" },
+        "address": { "type": "string", "description": "Contract address for cw20/erc20/snip20." },
+        "coingecko_id": { "type": "string" },
+        "logo_URIs": {
+          "type": "object",
+          "anyOf": [{ "required": ["png"] }, { "required": ["svg"] }],
+          "properties": {
+            "png": { "type": "string", "format": "uri-reference" },
+            "svg": { "type": "string", "format": "uri-reference" }
+          },
+          "additionalProperties": false
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "png": { "type": "string", "format": "uri-reference" },
+              "svg": { "type": "string", "format": "uri-reference" },
+              "image_sync": {
+                "type": "object",
+                "properties": {
+                  "chain_name": { "type": "string" },
+                  "base_denom": { "type": "string" }
+                }
+              },
+              "theme": {
+                "type": "object",
+                "properties": {
+                  "primary_color_hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+                  "circle": { "type": "boolean" },
+                  "dark_mode": { "type": "boolean" }
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "socials": {
+          "type": "object",
+          "properties": {
+            "website": { "type": "string", "format": "uri" },
+            "twitter": { "type": "string", "format": "uri" },
+            "telegram": { "type": "string", "format": "uri" },
+            "discord": { "type": "string", "format": "uri" },
+            "github": { "type": "string", "format": "uri" },
+            "whitepaper": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": false
+        },
+        "traces": {
+          "type": "array",
+          "description": "Provenance chain for bridged/derived assets (IBC, wrapped, etc.).",
+          "items": {
+            "type": "object",
+            "required": ["type", "counterparty", "chain"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["ibc", "ibc-cw20", "bridge", "wrapped", "additional-mintage", "synthetic", "test-mintage"]
+              },
+              "counterparty": {
+                "type": "object",
+                "required": ["chain_name", "base_denom"],
+                "properties": {
+                  "chain_name": { "type": "string" },
+                  "base_denom": { "type": "string" },
+                  "channel_id": { "type": "string" },
+                  "port": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "chain": {
+                "type": "object",
+                "properties": {
+                  "channel_id": { "type": "string" },
+                  "port": { "type": "string" },
+                  "path": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "provider": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "safrimba": {
+          "type": "object",
+          "description": "Safrimba-specific listing metadata.",
+          "properties": {
+            "listed": { "type": "boolean", "default": true },
+            "rank": { "type": "integer", "minimum": 0 },
+            "verified": { "type": "boolean", "default": false },
+            "audit_url": { "type": "string", "format": "uri" },
+            "tradeable_on": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["audoswap", "osmosis", "skip", "squid"] }
+            },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["stablecoin", "memecoin", "lst", "governance", "wrapped", "rwa", "gas", "utility", "lp"] }
+            },
+            "risk": { "type": "string", "enum": ["low", "medium", "high"] }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

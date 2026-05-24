@@ -1,0 +1,115 @@
+{
+  "$schema": "../../schemas/chain.schema.json",
+  "chain_name": "safrochain",
+  "chain_id": "safro-testnet-1",
+  "pretty_name": "Safrochain Testnet",
+  "chain_type": "cosmos",
+  "status": "live",
+  "network_type": "testnet",
+  "website": "https://testnet.safrochain.com",
+  "bech32_prefix": "addr_safro",
+  "daemon_name": "safrod",
+  "node_home": "$HOME/.safrochain",
+  "slip44": 118,
+  "key_algos": [
+    "secp256k1"
+  ],
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "usaf",
+        "fixed_min_gas_price": 0.0025,
+        "low_gas_price": 0.01,
+        "average_gas_price": 0.025,
+        "high_gas_price": 0.04
+      }
+    ]
+  },
+  "staking": {
+    "staking_tokens": [
+      {
+        "denom": "usaf"
+      }
+    ]
+  },
+  "codebase": {
+    "git_repo": "https://github.com/safrochain/safrochain",
+    "cosmos_sdk_version": "0.50",
+    "consensus": {
+      "type": "cometbft",
+      "version": "0.38"
+    },
+    "cosmwasm_enabled": true,
+    "cosmwasm_version": "0.53",
+    "ibc_enabled": true
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc.testnet.safrochain.com",
+        "provider": "Safrochain Foundation"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://rest.testnet.safrochain.com",
+        "provider": "Safrochain Foundation"
+      }
+    ],
+    "grpc": [
+      {
+        "address": "grpc.testnet.safrochain.com:443",
+        "provider": "Safrochain Foundation"
+      }
+    ],
+    "wss": [
+      {
+        "address": "wss://rpc.testnet.safrochain.com/websocket",
+        "provider": "Safrochain Foundation"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "safrimba",
+      "url": "https://explorer.testnet.safrochain.com",
+      "tx_page": "https://explorer.testnet.safrochain.com/safrochain/tx/${txHash}",
+      "account_page": "https://explorer.testnet.safrochain.com/safrochain/account/${accountAddress}"
+    }
+  ],
+  "features": [
+    "stargate",
+    "ibc-transfer",
+    "ibc-go",
+    "cosmwasm",
+    "tokenfactory",
+    "cw20",
+    "cw721",
+    "ics20",
+    "ics721"
+  ],
+  "logo_URIs": {
+    "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
+    "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg"
+  },
+  "images": [
+    {
+      "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
+      "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg",
+      "theme": {
+        "primary_color_hex": "#0E7C3A",
+        "circle": true
+      }
+    }
+  ],
+  "safrimba": {
+    "rank": 1,
+    "featured": true,
+    "tagline": "Testnet — Safrochain.",
+    "socials": {
+      "website": "https://safrochain.com",
+      "twitter": "https://x.com/safrochain",
+      "github": "https://github.com/safrochain"
+    }
+  }
+}

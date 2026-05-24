@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/assetlist.schema.json",
+  "chain_name": "osmosistestnet",
+  "assets": [
+    {
+      "type_asset": "sdk.coin",
+      "description": "Native staking, gas, and governance token of Osmosis Testnet.",
+      "denom_units": [
+        {
+          "denom": "uosmo",
+          "exponent": 0
+        },
+        {
+          "denom": "osmo",
+          "exponent": 6
+        }
+      ],
+      "base": "uosmo",
+      "name": "Osmosis (Testnet)",
+      "display": "osmo",
+      "symbol": "OSMO",
+      "coingecko_id": "osmosis",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/osmosistestnet/images/osmo.png",
+        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/osmosistestnet/images/osmo.svg"
+      },
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "tags": [
+          "gas",
+          "governance"
+        ],
+        "risk": "low"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "../../schemas/assetlist.schema.json",
+  "chain_name": "safrochain",
+  "assets": [
+    {
+      "type_asset": "sdk.coin",
+      "description": "The native staking, gas, and governance token of Safrochain.",
+      "extended_description": "SAF is the native asset of the Safrochain network. It is used to pay transaction fees, to stake with validators securing the chain, and to vote on governance proposals.",
+      "denom_units": [
+        {
+          "denom": "usaf",
+          "exponent": 0,
+          "aliases": [
+            "microsaf"
+          ]
+        },
+        {
+          "denom": "msaf",
+          "exponent": 3
+        },
+        {
+          "denom": "saf",
+          "exponent": 6
+        }
+      ],
+      "base": "usaf",
+      "name": "Safrochain",
+      "display": "saf",
+      "symbol": "SAF",
+      "coingecko_id": "safrochain",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/safrochain/images/saf.png",
+        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/safrochain/images/saf.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/safrochain/images/saf.png",
+          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/safrochain/images/saf.svg",
+          "theme": {
+            "primary_color_hex": "#0E7C3A",
+            "circle": true
+          }
+        }
+      ],
+      "socials": {
+        "website": "https://safrochain.com",
+        "twitter": "https://x.com/safrochain",
+        "github": "https://github.com/safrochain"
+      },
+      "keywords": [
+        "staking",
+        "gas",
+        "governance",
+        "native"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "rank": 1,
+        "tradeable_on": [
+          "audoswap",
+          "osmosis"
+        ],
+        "tags": [
+          "gas",
+          "governance"
+        ],
+        "risk": "low"
+      }
+    }
+  ]
+}

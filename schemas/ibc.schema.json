@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.safrochain.com/schemas/ibc.schema.json",
+  "title": "IbcPath",
+  "description": "IBC client/connection/channel definition between two chains. File name MUST be <chain_a>-<chain_b>.json (alphabetical).",
+  "type": "object",
+  "required": ["chain_1", "chain_2", "channels"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "chain_1": { "$ref": "#/$defs/sideHeader" },
+    "chain_2": { "$ref": "#/$defs/sideHeader" },
+    "channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/channel" }
+    },
+    "operators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chain_1": { "type": "object", "properties": { "address": { "type": "string" } } },
+          "chain_2": { "type": "object", "properties": { "address": { "type": "string" } } },
+          "memo": { "type": "string" },
+          "name": { "type": "string" },
+          "discord_handle": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sideHeader": {
+      "type": "object",
+      "required": ["chain_name", "client_id", "connection_id"],
+      "properties": {
+        "chain_name": { "type": "string", "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$" },
+        "client_id": { "type": "string", "pattern": "^07-tendermint-[0-9]+$" },
+        "connection_id": { "type": "string", "pattern": "^connection-[0-9]+$" }
+      },
+      "additionalProperties": false
+    },
+    "channel": {
+      "type": "object",
+      "required": ["chain_1", "chain_2", "ordering", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "chain_1": { "$ref": "#/$defs/side" },
+        "chain_2": { "$ref": "#/$defs/side" },
+        "ordering": { "type": "string", "enum": ["ordered", "unordered"] },
+        "version": { "type": "string", "enum": ["ics20-1", "ics20-2", "ics27-1", "ics721-1"] },
+        "tags": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string", "enum": ["live", "killed", "upcoming"] },
+            "preferred": { "type": "boolean" },
+            "dex": { "type": "string" },
+            "properties": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "description": { "type": "string" }
+      }
+    },
+    "side": {
+      "type": "object",
+      "required": ["channel_id", "port_id"],
+      "additionalProperties": false,
+      "properties": {
+        "channel_id": { "type": "string", "pattern": "^channel-[0-9]+$" },
+        "port_id": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

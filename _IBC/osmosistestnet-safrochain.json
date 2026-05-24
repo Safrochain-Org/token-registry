@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/ibc.schema.json",
+  "chain_1": {
+    "chain_name": "osmosistestnet",
+    "client_id": "07-tendermint-5129",
+    "connection_id": "connection-4472"
+  },
+  "chain_2": {
+    "chain_name": "safrochain",
+    "client_id": "07-tendermint-24",
+    "connection_id": "connection-16"
+  },
+  "channels": [
+    {
+      "chain_1": { "channel_id": "channel-11649", "port_id": "transfer" },
+      "chain_2": { "channel_id": "channel-14", "port_id": "transfer" },
+      "ordering": "unordered",
+      "version": "ics20-1",
+      "tags": { "status": "live", "preferred": true, "dex": "osmosis" },
+      "description": "Osmosis testnet ↔ Safrochain testnet. Recovered 2026-05-23 via gov prop #305 with substitute client 07-tendermint-5210."
+    }
+  ]
+}

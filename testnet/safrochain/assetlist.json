@@ -1,0 +1,173 @@
+{
+  "$schema": "../../schemas/assetlist.schema.json",
+  "chain_name": "safrochain",
+  "assets": [
+    {
+      "type_asset": "sdk.coin",
+      "description": "Native testnet token of Safrochain.",
+      "denom_units": [
+        {
+          "denom": "usaf",
+          "exponent": 0,
+          "aliases": [
+            "microsaf"
+          ]
+        },
+        {
+          "denom": "msaf",
+          "exponent": 3
+        },
+        {
+          "denom": "saf",
+          "exponent": 6
+        }
+      ],
+      "base": "usaf",
+      "name": "Safrochain",
+      "display": "saf",
+      "symbol": "SAF",
+      "coingecko_id": "safrochain",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
+        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.png",
+          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/saf.svg",
+          "theme": {
+            "primary_color_hex": "#0E7C3A",
+            "circle": true
+          }
+        }
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "rank": 1,
+        "tradeable_on": [
+          "audoswap"
+        ],
+        "tags": [
+          "gas",
+          "governance"
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "type_asset": "ics20",
+      "description": "Noble USDC bridged to Safrochain Testnet via IBC channel-12 (testnet).",
+      "denom_units": [
+        {
+          "denom": "ibc/498A0751C798A0D9A389AA3691123DADA57DAA4FE165D5C75894505B876BA6E4",
+          "exponent": 0
+        },
+        {
+          "denom": "usdc",
+          "exponent": 6
+        }
+      ],
+      "base": "ibc/498A0751C798A0D9A389AA3691123DADA57DAA4FE165D5C75894505B876BA6E4",
+      "name": "Noble USDC (Testnet)",
+      "display": "usdc",
+      "symbol": "USDC",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/usdc.png",
+        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/usdc.svg"
+      },
+      "traces": [
+        {
+          "type": "ibc",
+          "counterparty": {
+            "chain_name": "nobletestnet",
+            "base_denom": "uusdc",
+            "channel_id": "channel-890",
+            "port": "transfer"
+          },
+          "chain": {
+            "channel_id": "channel-12",
+            "port": "transfer",
+            "path": "transfer/channel-12/uusdc"
+          }
+        }
+      ],
+      "keywords": [
+        "stablecoin",
+        "bridged"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "rank": 2,
+        "tradeable_on": [
+          "audoswap",
+          "osmosis"
+        ],
+        "tags": [
+          "stablecoin",
+          "wrapped"
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "type_asset": "factory",
+      "description": "AEX token for exchange and governance on Safrochain.",
+      "extended_description": "Advanced Exchange Token (AEX) is a tokenfactory-minted asset issued on Safrochain testnet by addr_safro1hezduhmk52kacax8f9l076sdgtejf8eshtszla. Used as the utility and governance token for an exchange experiment.",
+      "denom_units": [
+        {
+          "denom": "factory/addr_safro1hezduhmk52kacax8f9l076sdgtejf8eshtszla/aex",
+          "exponent": 0
+        },
+        {
+          "denom": "aex",
+          "exponent": 6,
+          "aliases": [
+            "AEX"
+          ]
+        }
+      ],
+      "base": "factory/addr_safro1hezduhmk52kacax8f9l076sdgtejf8eshtszla/aex",
+      "name": "Advanced Exchange Token",
+      "display": "aex",
+      "symbol": "AEX",
+      "address": "addr_safro1hezduhmk52kacax8f9l076sdgtejf8eshtszla",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.png",
+        "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.png",
+          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/testnet/safrochain/images/aex.svg",
+          "theme": {
+            "primary_color_hex": "#1F6FEB",
+            "circle": true
+          }
+        }
+      ],
+      "socials": {
+        "website": "https://testsafrotoken.com"
+      },
+      "keywords": [
+        "tokenfactory",
+        "exchange",
+        "governance",
+        "utility"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": false,
+        "tradeable_on": [
+          "audoswap"
+        ],
+        "tags": [
+          "utility",
+          "governance"
+        ],
+        "risk": "medium"
+      }
+    }
+  ]
+}

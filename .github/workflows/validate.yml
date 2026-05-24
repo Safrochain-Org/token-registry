@@ -1,0 +1,40 @@
+name: Validate Registry
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile=false
+
+      - name: Validate schemas
+        run: pnpm validate
+
+      - name: Lint cross-file consistency
+        run: pnpm lint
+
+      - name: Build registry bundle
+        run: pnpm build
+
+      - name: Upload dist
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-dist
+          path: dist/

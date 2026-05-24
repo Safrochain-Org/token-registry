@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.safrochain.com/schemas/chain.schema.json",
+  "title": "Chain",
+  "description": "Cosmos chain definition consumed by Safrimba, Safrochain Hub, Audoswap, Keplr/Leap suggest-chain.",
+  "type": "object",
+  "required": [
+    "chain_name",
+    "chain_id",
+    "pretty_name",
+    "network_type",
+    "bech32_prefix",
+    "slip44",
+    "apis",
+    "fees",
+    "staking"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "$schema": { "type": "string" },
+    "chain_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$",
+      "description": "Folder-safe lowercase identifier. Must match the parent folder name."
+    },
+    "chain_id": { "type": "string", "minLength": 1 },
+    "pretty_name": { "type": "string", "minLength": 1 },
+    "chain_type": { "type": "string", "enum": ["cosmos"], "default": "cosmos" },
+    "status": { "type": "string", "enum": ["live", "upcoming", "killed"] },
+    "network_type": { "type": "string", "enum": ["mainnet", "testnet", "devnet"] },
+    "website": { "type": "string", "format": "uri" },
+    "bech32_prefix": { "type": "string", "minLength": 1 },
+    "daemon_name": { "type": "string" },
+    "node_home": { "type": "string" },
+    "slip44": { "type": "integer", "minimum": 0 },
+    "key_algos": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["secp256k1", "ethsecp256k1", "ed25519", "sr25519"] }
+    },
+    "fees": {
+      "type": "object",
+      "required": ["fee_tokens"],
+      "properties": {
+        "fee_tokens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["denom"],
+            "properties": {
+              "denom": { "type": "string" },
+              "fixed_min_gas_price": { "type": "number", "minimum": 0 },
+              "low_gas_price": { "type": "number", "minimum": 0 },
+              "average_gas_price": { "type": "number", "minimum": 0 },
+              "high_gas_price": { "type": "number", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "staking": {
+      "type": "object",
+      "required": ["staking_tokens"],
+      "properties": {
+        "staking_tokens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["denom"],
+            "properties": { "denom": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "codebase": {
+      "type": "object",
+      "properties": {
+        "git_repo": { "type": "string", "format": "uri" },
+        "recommended_version": { "type": "string" },
+        "compatible_versions": { "type": "array", "items": { "type": "string" } },
+        "cosmos_sdk_version": { "type": "string" },
+        "consensus": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string", "enum": ["tendermint", "cometbft"] },
+            "version": { "type": "string" }
+          }
+        },
+        "cosmwasm_enabled": { "type": "boolean" },
+        "cosmwasm_version": { "type": "string" },
+        "ibc_enabled": { "type": "boolean" }
+      }
+    },
+    "apis": {
+      "type": "object",
+      "properties": {
+        "rpc": { "$ref": "#/$defs/endpointArray" },
+        "rest": { "$ref": "#/$defs/endpointArray" },
+        "grpc": { "$ref": "#/$defs/endpointArray" },
+        "grpc-web": { "$ref": "#/$defs/endpointArray" },
+        "wss": { "$ref": "#/$defs/endpointArray" }
+      },
+      "additionalProperties": false
+    },
+    "explorers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "kind": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "tx_page": { "type": "string" },
+          "account_page": { "type": "string" }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "stargate",
+          "ibc-transfer",
+          "ibc-go",
+          "cosmwasm",
+          "cosmwasm-float",
+          "tokenfactory",
+          "cw20",
+          "cw721",
+          "ics20",
+          "ics721",
+          "no-legacy-stdTx",
+          "eth-address-gen",
+          "eth-key-sign"
+        ]
+      }
+    },
+    "logo_URIs": {
+      "type": "object",
+      "properties": {
+        "png": { "type": "string", "format": "uri-reference" },
+        "svg": { "type": "string", "format": "uri-reference" }
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "png": { "type": "string", "format": "uri-reference" },
+          "svg": { "type": "string", "format": "uri-reference" },
+          "theme": {
+            "type": "object",
+            "properties": {
+              "primary_color_hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+              "circle": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "peers": {
+      "type": "object",
+      "properties": {
+        "seeds": { "type": "array", "items": { "type": "object" } },
+        "persistent_peers": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "safrimba": {
+      "type": "object",
+      "description": "Safrimba explorer overrides (ranks, banners, socials).",
+      "properties": {
+        "rank": { "type": "integer", "minimum": 0 },
+        "featured": { "type": "boolean" },
+        "banner_url": { "type": "string", "format": "uri-reference" },
+        "tagline": { "type": "string", "maxLength": 140 },
+        "socials": { "$ref": "#/$defs/socials" }
+      }
+    }
+  },
+  "$defs": {
+    "endpointArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["address"],
+        "properties": {
+          "address": { "type": "string", "format": "uri" },
+          "provider": { "type": "string" }
+        }
+      }
+    },
+    "socials": {
+      "type": "object",
+      "properties": {
+        "twitter": { "type": "string", "format": "uri" },
+        "telegram": { "type": "string", "format": "uri" },
+        "discord": { "type": "string", "format": "uri" },
+        "github": { "type": "string", "format": "uri" },
+        "medium": { "type": "string", "format": "uri" },
+        "website": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

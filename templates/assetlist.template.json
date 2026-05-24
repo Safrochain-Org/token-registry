@@ -1,0 +1,39 @@
+{
+  "$schema": "../schemas/assetlist.schema.json",
+  "chain_name": "REPLACE_ME_chain_name",
+  "assets": [
+    {
+      "type_asset": "sdk.coin",
+      "description": "Short, one-paragraph description of the token.",
+      "denom_units": [
+        { "denom": "urep", "exponent": 0 },
+        { "denom": "rep", "exponent": 6 }
+      ],
+      "base": "urep",
+      "name": "Replace Me",
+      "display": "rep",
+      "symbol": "REP",
+      "coingecko_id": "replace-me",
+      "logo_URIs": { "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png", "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg" },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png",
+          "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg",
+          "theme": { "primary_color_hex": "#000000", "circle": true }
+        }
+      ],
+      "socials": {
+        "website": "https://example.com",
+        "twitter": "https://x.com/example"
+      },
+      "keywords": ["gas"],
+      "safrimba": {
+        "listed": true,
+        "verified": false,
+        "tradeable_on": ["audoswap"],
+        "tags": ["gas"],
+        "risk": "medium"
+      }
+    }
+  ]
+}

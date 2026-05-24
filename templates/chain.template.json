@@ -1,0 +1,47 @@
+{
+  "$schema": "../schemas/chain.schema.json",
+  "chain_name": "REPLACE_ME_chain_name",
+  "chain_id": "REPLACE_ME-1",
+  "pretty_name": "Replace Me",
+  "chain_type": "cosmos",
+  "status": "upcoming",
+  "network_type": "mainnet",
+  "website": "https://example.com",
+  "bech32_prefix": "rep",
+  "daemon_name": "repd",
+  "node_home": "$HOME/.repd",
+  "slip44": 118,
+  "key_algos": ["secp256k1"],
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "urep",
+        "fixed_min_gas_price": 0.0025,
+        "low_gas_price": 0.01,
+        "average_gas_price": 0.025,
+        "high_gas_price": 0.04
+      }
+    ]
+  },
+  "staking": { "staking_tokens": [{ "denom": "urep" }] },
+  "codebase": {
+    "git_repo": "https://github.com/example/replaceme",
+    "cosmos_sdk_version": "0.50",
+    "consensus": { "type": "cometbft", "version": "0.38" },
+    "cosmwasm_enabled": true,
+    "ibc_enabled": true
+  },
+  "apis": {
+    "rpc": [{ "address": "https://rpc.example.com", "provider": "Example" }],
+    "rest": [{ "address": "https://rest.example.com", "provider": "Example" }]
+  },
+  "explorers": [
+    {
+      "kind": "safrimba",
+      "url": "https://safrimba.safrochain.com",
+      "tx_page": "https://safrimba.safrochain.com/REPLACE_ME/tx/${txHash}"
+    }
+  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm"],
+  "logo_URIs": { "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.png", "svg": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/rep.svg" }
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.safrochain.com/schemas/nft-assetlist.schema.json",
+  "title": "NftAssetList",
+  "description": "NFT collection list for a single chain (cw721, ics721, native).",
+  "type": "object",
+  "required": ["chain_name", "assets"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "chain_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$"
+    },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nftCollection" }
+    }
+  },
+  "$defs": {
+    "nftCollection": {
+      "type": "object",
+      "required": ["collection_id", "name", "symbol", "standard", "creator", "logo_URIs"],
+      "additionalProperties": false,
+      "properties": {
+        "collection_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$",
+          "description": "Folder-safe slug, unique per chain. e.g. safro-genesis, audoswap-passes."
+        },
+        "name": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "symbol": { "type": "string", "pattern": "^[A-Z0-9.\\-]{1,16}$" },
+        "description": { "type": "string", "maxLength": 2000 },
+        "standard": {
+          "type": "string",
+          "enum": ["cw721", "ics721", "native", "cw2981", "sg721"]
+        },
+        "contract_address": {
+          "type": "string",
+          "description": "Required for cw721/cw2981/sg721. Bech32 address of the NFT contract."
+        },
+        "code_id": { "type": "integer", "minimum": 0 },
+        "minter": { "type": "string" },
+        "creator": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "address": { "type": "string" },
+            "website": { "type": "string", "format": "uri" },
+            "verified": { "type": "boolean", "default": false }
+          },
+          "additionalProperties": false
+        },
+        "supply": {
+          "type": "object",
+          "properties": {
+            "total": { "type": "integer", "minimum": 0 },
+            "minted": { "type": "integer", "minimum": 0 },
+            "cap": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "mint": {
+          "type": "object",
+          "properties": {
+            "price": { "type": "string", "description": "Human format, e.g. '50 SAF'" },
+            "denom": { "type": "string" },
+            "start_time": { "type": "string", "format": "date-time" },
+            "end_time": { "type": "string", "format": "date-time" },
+            "url": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": false
+        },
+        "royalties": {
+          "type": "object",
+          "properties": {
+            "share": { "type": "number", "minimum": 0, "maximum": 1 },
+            "payment_address": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "logo_URIs": {
+          "type": "object",
+          "anyOf": [{ "required": ["png"] }, { "required": ["svg"] }],
+          "properties": {
+            "png": { "type": "string", "format": "uri-reference" },
+            "svg": { "type": "string", "format": "uri-reference" }
+          },
+          "additionalProperties": false
+        },
+        "banner_URI": { "type": "string", "format": "uri-reference" },
+        "preview_images": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri-reference" },
+          "maxItems": 8
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "base_uri": { "type": "string" },
+            "scheme": { "type": "string", "enum": ["ipfs", "https", "ar"] },
+            "schema": { "type": "string", "enum": ["opensea", "stargaze", "cw721-base"] }
+          },
+          "additionalProperties": false
+        },
+        "marketplaces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "url"],
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "socials": {
+          "type": "object",
+          "properties": {
+            "website": { "type": "string", "format": "uri" },
+            "twitter": { "type": "string", "format": "uri" },
+            "discord": { "type": "string", "format": "uri" },
+            "telegram": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": false
+        },
+        "traces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "counterparty"],
+            "properties": {
+              "type": { "type": "string", "enum": ["ics721", "bridge", "wrapped"] },
+              "counterparty": {
+                "type": "object",
+                "required": ["chain_name", "collection_id"],
+                "properties": {
+                  "chain_name": { "type": "string" },
+                  "collection_id": { "type": "string" },
+                  "channel_id": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "channel_id": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "safrimba": {
+          "type": "object",
+          "properties": {
+            "listed": { "type": "boolean", "default": true },
+            "verified": { "type": "boolean", "default": false },
+            "featured": { "type": "boolean", "default": false },
+            "rank": { "type": "integer", "minimum": 0 },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["pfp", "art", "music", "gaming", "domain", "rwa", "membership", "ticket"] }
+            },
+            "risk": { "type": "string", "enum": ["low", "medium", "high"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "standard": { "enum": ["cw721", "cw2981", "sg721"] } } },
+          "then": { "required": ["contract_address"] }
+        }
+      ]
+    }
+  }
+}

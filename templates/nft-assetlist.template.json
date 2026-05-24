@@ -1,0 +1,42 @@
+{
+  "$schema": "../schemas/nft-assetlist.schema.json",
+  "chain_name": "REPLACE_ME_chain_name",
+  "assets": [
+    {
+      "collection_id": "my-collection",
+      "name": "My NFT Collection",
+      "symbol": "MYNFT",
+      "description": "Short description of the collection.",
+      "standard": "cw721",
+      "contract_address": "addr_safro1examplenftcontract00000000000000000000000",
+      "creator": {
+        "name": "Creator Studio",
+        "address": "addr_safro1examplecreator0000000000000000000000000",
+        "website": "https://example.com",
+        "verified": false
+      },
+      "supply": { "total": 1000, "minted": 0, "cap": 1000 },
+      "mint": {
+        "price": "10 SAF",
+        "denom": "usaf",
+        "start_time": "2026-06-01T00:00:00Z",
+        "url": "https://example.com/mint"
+      },
+      "royalties": { "share": 0.05, "payment_address": "addr_safro1examplecreator0000000000000000000000000" },
+      "logo_URIs": { "png": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/nft/my-collection/logo.png" },
+      "banner_URI": "https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/nft/my-collection/banner.png",
+      "preview_images": ["https://raw.githubusercontent.com/safrochain/token-registry/main/mainnet/REPLACE_ME_chain_name/images/nft/my-collection/preview-1.png"],
+      "metadata": { "base_uri": "ipfs://bafy.../", "scheme": "ipfs", "schema": "cw721-base" },
+      "marketplaces": [
+        { "name": "Safrimba NFT", "url": "https://safrimba.safrochain.com/nft/my-collection" }
+      ],
+      "socials": { "twitter": "https://x.com/example" },
+      "safrimba": {
+        "listed": true,
+        "verified": false,
+        "tags": ["pfp"],
+        "risk": "medium"
+      }
+    }
+  ]
+}
