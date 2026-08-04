@@ -1,0 +1,77 @@
+{
+  "$schema": "../../schemas/chain.schema.json",
+  "chain_name": "osmosis",
+  "chain_id": "osmosis-1",
+  "pretty_name": "Osmosis",
+  "chain_type": "cosmos",
+  "status": "live",
+  "network_type": "mainnet",
+  "website": "https://osmosis.zone",
+  "bech32_prefix": "osmo",
+  "daemon_name": "osmosisd",
+  "node_home": "$HOME/.osmosisd",
+  "slip44": 118,
+  "key_algos": [
+    "secp256k1"
+  ],
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "uosmo",
+        "fixed_min_gas_price": 0.0025,
+        "low_gas_price": 0.0025,
+        "average_gas_price": 0.025,
+        "high_gas_price": 0.04
+      }
+    ]
+  },
+  "staking": {
+    "staking_tokens": [
+      {
+        "denom": "uosmo"
+      }
+    ]
+  },
+  "codebase": {
+    "git_repo": "https://github.com/osmosis-labs/osmosis",
+    "cosmos_sdk_version": "0.50",
+    "consensus": {
+      "type": "cometbft",
+      "version": "0.38"
+    },
+    "cosmwasm_enabled": true,
+    "ibc_enabled": true
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc.osmosis.zone",
+        "provider": "Osmosis Foundation"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://lcd.osmosis.zone",
+        "provider": "Osmosis Foundation"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "mintscan",
+      "url": "https://www.mintscan.io/osmosis",
+      "tx_page": "https://www.mintscan.io/osmosis/tx/${txHash}",
+      "account_page": "https://www.mintscan.io/osmosis/address/${accountAddress}"
+    }
+  ],
+  "features": [
+    "stargate",
+    "ibc-transfer",
+    "ibc-go",
+    "cosmwasm",
+    "tokenfactory"
+  ],
+  "logo_URIs": {
+    "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/osmosis/images/osmo.png"
+  }
+}

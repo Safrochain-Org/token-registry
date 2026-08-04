@@ -127,6 +127,143 @@
         ],
         "risk": "medium"
       }
+    },
+    {
+      "type_asset": "ics20",
+      "description": "Circle USDC bridged from Noble to Safrochain over IBC channel-0.",
+      "extended_description": "Native Noble USDC (uusdc) transferred to Safrochain mainnet via the live Noble ↔ Safrochain ICS-20 path (Noble channel-581 ↔ Safrochain channel-0). IBC denom hash verified on-chain.",
+      "denom_units": [
+        {
+          "denom": "ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5",
+          "exponent": 0
+        },
+        {
+          "denom": "usdc",
+          "exponent": 6
+        }
+      ],
+      "base": "ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5",
+      "name": "USD Coin",
+      "display": "usdc",
+      "symbol": "USDC",
+      "coingecko_id": "usd-coin",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.svg",
+          "theme": {
+            "primary_color_hex": "#2775CA",
+            "circle": true
+          }
+        }
+      ],
+      "traces": [
+        {
+          "type": "ibc",
+          "counterparty": {
+            "chain_name": "noble",
+            "base_denom": "uusdc",
+            "channel_id": "channel-581",
+            "port": "transfer"
+          },
+          "chain": {
+            "channel_id": "channel-0",
+            "port": "transfer",
+            "path": "transfer/channel-0/uusdc"
+          }
+        }
+      ],
+      "keywords": [
+        "stablecoin",
+        "bridged",
+        "circle",
+        "noble"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "tradeable_on": [
+          "audoswap",
+          "osmosis"
+        ],
+        "tags": [
+          "stablecoin",
+          "wrapped"
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "type_asset": "ics20",
+      "description": "Osmosis OSMO bridged to Safrochain over IBC channel-1.",
+      "extended_description": "Native Osmosis OSMO (uosmo) transferred to Safrochain mainnet via the live Osmosis ↔ Safrochain ICS-20 path (Osmosis channel-110497 ↔ Safrochain channel-1). IBC denom hash verified on-chain.",
+      "denom_units": [
+        {
+          "denom": "ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B",
+          "exponent": 0
+        },
+        {
+          "denom": "osmo",
+          "exponent": 6
+        }
+      ],
+      "base": "ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B",
+      "name": "Osmosis",
+      "display": "osmo",
+      "symbol": "OSMO",
+      "coingecko_id": "osmosis",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.svg",
+          "theme": {
+            "primary_color_hex": "#5E12A0",
+            "circle": true
+          }
+        }
+      ],
+      "traces": [
+        {
+          "type": "ibc",
+          "counterparty": {
+            "chain_name": "osmosis",
+            "base_denom": "uosmo",
+            "channel_id": "channel-110497",
+            "port": "transfer"
+          },
+          "chain": {
+            "channel_id": "channel-1",
+            "port": "transfer",
+            "path": "transfer/channel-1/uosmo"
+          }
+        }
+      ],
+      "keywords": [
+        "dex",
+        "bridged",
+        "osmosis"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "tradeable_on": [
+          "audoswap",
+          "osmosis"
+        ],
+        "tags": [
+          "utility",
+          "wrapped"
+        ],
+        "risk": "low"
+      }
     }
   ]
 }
