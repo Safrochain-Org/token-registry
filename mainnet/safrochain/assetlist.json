@@ -67,6 +67,66 @@
         ],
         "risk": "low"
       }
+    },
+    {
+      "type_asset": "factory",
+      "description": "Dyma platform token on Safrochain. Do the task. Own the proof.",
+      "extended_description": "DYMA is the Dyma task-to-earn platform token, minted via x/tokenfactory on Safrochain mainnet. It is used for platform rewards and ecosystem utility. It is not the chain fee or staking denom (SAF).",
+      "denom_units": [
+        {
+          "denom": "factory/addr_safro1zlqc8hf3drqz9ntaklfhddetfay3tt9n9c2tar/udyma",
+          "exponent": 0,
+          "aliases": [
+            "microdyma"
+          ]
+        },
+        {
+          "denom": "dyma",
+          "exponent": 6,
+          "aliases": [
+            "DYMA"
+          ]
+        }
+      ],
+      "base": "factory/addr_safro1zlqc8hf3drqz9ntaklfhddetfay3tt9n9c2tar/udyma",
+      "name": "Dyma",
+      "display": "dyma",
+      "symbol": "DYMA",
+      "address": "addr_safro1zlqc8hf3drqz9ntaklfhddetfay3tt9n9c2tar",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/dyma.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/dyma.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/dyma.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/dyma.svg",
+          "theme": {
+            "primary_color_hex": "#C2410C",
+            "circle": true
+          }
+        }
+      ],
+      "socials": {
+        "website": "https://dyma.io",
+        "twitter": "https://x.com/dyma_io",
+        "github": "https://github.com/Dyma-IO"
+      },
+      "keywords": [
+        "tokenfactory",
+        "rewards",
+        "platform",
+        "cosmos"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": false,
+        "tradeable_on": [],
+        "tags": [
+          "utility"
+        ],
+        "risk": "medium"
+      }
     }
   ]
 }
