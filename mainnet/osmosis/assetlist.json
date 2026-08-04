@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schemas/assetlist.schema.json",
+  "chain_name": "osmosis",
+  "assets": [
+    {
+      "type_asset": "sdk.coin",
+      "description": "The native token of Osmosis.",
+      "denom_units": [
+        {
+          "denom": "uosmo",
+          "exponent": 0
+        },
+        {
+          "denom": "osmo",
+          "exponent": 6
+        }
+      ],
+      "base": "uosmo",
+      "name": "Osmosis",
+      "display": "osmo",
+      "symbol": "OSMO",
+      "coingecko_id": "osmosis",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/osmo.svg",
+          "theme": {
+            "primary_color_hex": "#5E12A0",
+            "circle": true
+          }
+        }
+      ],
+      "socials": {
+        "website": "https://osmosis.zone",
+        "twitter": "https://x.com/osmosiszone",
+        "github": "https://github.com/osmosis-labs"
+      },
+      "keywords": [
+        "dex",
+        "staking",
+        "gas"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "tags": [
+          "gas",
+          "utility"
+        ],
+        "risk": "low"
+      }
+    }
+  ]
+}
